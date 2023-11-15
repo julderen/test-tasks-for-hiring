@@ -1,0 +1,330 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "import",
+    "jest",
+    "sonarjs",
+    "unicorn",
+    "unused-imports",
+    "prettier",
+    "fsd-import"
+  ],
+  "ignorePatterns": ["build", ".*.js", "*.config.js", "node_modules", "scripts", "config", "dist", "*.d.ts", "test", "vitest.config.ts"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es2020": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "prettier/prettier": ["warn", {
+      "bracketSpacing": true,
+      "printWidth": 100,
+      "singleQuote": true,
+      "tabWidth": 4,
+      "trailingComma": "all",
+      "arrowParens": "avoid",
+      "endOfLine": "auto"
+    }],
+    "array-callback-return": ["error", {
+      "allowImplicit": true
+    }],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "error",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-spacing": "error",
+    "class-methods-use-this": "error",
+    "curly": "error",
+    "default-case-last": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "default-case": "error",
+    "eol-last": ["error", "always"],
+    "eqeqeq": "error",
+    "func-names": ["error", "as-needed"],  //Need refactoring memoize
+    "getter-return": "error",
+    "guard-for-in": "error",
+    "max-depth": ["error", 3],
+    "max-len": ["error", {
+      "code": 120,
+      "ignoreComments": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+    "max-nested-callbacks": ["error", 3],
+    "max-params": ["error", 4],
+    "no-await-in-loop": "error",
+    "no-bitwise": "error",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-continue": "error",
+    "no-else-return": "error",
+    "no-nested-ternary": "error",
+    "no-param-reassign": "error",  //Bad code style.
+    "no-plusplus": ["error", {
+      "allowForLoopAfterthoughts": true
+    }],
+    "no-promise-executor-return": "error",
+    "no-return-assign": "error",
+    "no-self-compare": "error",
+    "no-unneeded-ternary": "error",
+    "no-useless-rename": "error",
+    "no-useless-return": "error",
+    "no-var": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-const": ["error", {"destructuring": "all"}],
+    "prefer-destructuring": ["error", {"object": true, "array": true}],
+    "prefer-rest-params": "error",
+    "radix": "error",
+    "yoda": "error",
+
+    "import/no-useless-path-segments": ["error", { "noUselessIndex": true }],
+    "import/no-duplicates": 2,
+    "import/order": ["error", { "newlines-between": "always" }],
+
+    "react/destructuring-assignment": [2, "always"],
+    "react/display-name": [0],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    // Prettier-eslint we have a conflicts in some cases, so off
+    // Prettier do it as well, coz we use tabWidth: 4, change this prettier options, not this rules
+    "react/jsx-no-useless-fragment": ["error", {
+      "allowExpressions": true
+    }],
+    "react/jsx-props-no-multi-spaces": "error",
+    "react/no-array-index-key": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger": "warn",
+    "react/no-find-dom-node": "error",
+    "react/no-multi-comp": "error",
+    "react/no-unescaped-entities": "warn",
+    "jsx-a11y/no-autofocus": "warn",
+    "react/no-unstable-nested-components": "error",
+    "react/self-closing-comp": "error",
+    "react/sort-comp": ["warn", {
+      "order": [
+        "type-annotations",
+        "static-methods",
+        "lifecycle",
+        "everything-else",
+        "render"
+      ]
+    }],
+    "react/jsx-curly-brace-presence": [
+      "warn", {
+        "props": "never",
+        "children": "never",
+        "propElementValues": "always"
+      }],
+
+    "@typescript-eslint/brace-style": ["error", "1tbs"],
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/comma-spacing": ["error", { "before": false, "after": true }],
+    "@typescript-eslint/consistent-indexed-object-style": ["error", "record"],
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "@typescript-eslint/default-param-last": "error",
+    "@typescript-eslint/dot-notation": ["error"],
+    "@typescript-eslint/func-call-spacing": ["error", "never"],
+    "@typescript-eslint/keyword-spacing": ["error"],
+    "@typescript-eslint/lines-between-class-members": ["error", "always", {
+      "exceptAfterSingleLine": true
+    }],
+    "@typescript-eslint/no-dupe-class-members": ["error"],
+    "@typescript-eslint/no-dynamic-delete": "error",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-invalid-void-type": "error",
+    "@typescript-eslint/no-loop-func": "error",
+    "@typescript-eslint/no-meaningless-void-operator": "error",
+    "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "warn",
+    "@typescript-eslint/no-redeclare": "error",
+    "@typescript-eslint/no-require-imports": "error",
+    "@typescript-eslint/no-restricted-imports": ["error", {
+      "paths": [{
+        "name": "lodash-es",
+        "importNames": ["get"],
+        "message": "Please use utils/safeGet instead."
+      }, {
+        "name": "lodash-es/get",
+        "message": "Please use utils/safeGet instead."
+      }],
+      "patterns": [{
+        "group": ["@flowhealth/*/*",  "!@flowhealth/icons-untitled-ui/*", "!@flowhealth/entities/*"],
+        "message": "Do not refer to the internal structure of this module"
+      }]
+    }],
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+    "@typescript-eslint/no-unnecessary-type-arguments": "warn",
+    "@typescript-eslint/no-unused-expressions": ["error"],
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/object-curly-spacing": ["error", "always"],
+    "@typescript-eslint/padding-line-between-statements": ["error", {
+      "blankLine": "always",
+      "prev": "*",
+      "next": ["interface", "type", "block-like", "return", "multiline-block-like", "throw", "try"]
+    }],
+    "@typescript-eslint/prefer-includes": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-string-starts-ends-with": "error",
+    "@typescript-eslint/require-await": "error",
+    "@typescript-eslint/return-await": ["error", "never"],
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "@typescript-eslint/ban-types": [
+      "warn",
+      {
+        "types": {
+          "React.FC": "React.FC now allowed by style guide, see https://flowhealth.atlassian.net/wiki/spaces/TS/pages/1715044412/FE+style+guide?focusedCommentId=1716912163#Typings",
+          "React.VFC": "React.VFC now allowed by style guide, see https://flowhealth.atlassian.net/wiki/spaces/TS/pages/1715044412/FE+style+guide?focusedCommentId=1716912163#Typings",
+          "FC": "FC now allowed by style guide, see https://flowhealth.atlassian.net/wiki/spaces/TS/pages/1715044412/FE+style+guide?focusedCommentId=1716912163#Typings",
+          "VFC": "VFC now allowed by style guide, see https://flowhealth.atlassian.net/wiki/spaces/TS/pages/1715044412/FE+style+guide?focusedCommentId=1716912163#Typings"
+        }
+      }
+    ],
+
+    "jsx-a11y/anchor-is-valid": [ "error", { "components": [ "Link" ], "specialLink": [ "to" ] } ],
+    "jsx-a11y/aria-role": [2, {
+      "ignoreNonDOM": true
+    }],
+
+
+    "unicorn/prevent-abbreviations": ["error", {
+      "replacements": {
+        "str": {
+          "string": false
+        },
+        "acc": {
+          "accumulator": false
+        },
+        "args": {
+          "arguments": false
+        },
+        "param": {
+          "parameter": false
+        },
+        "i": {
+          "index": false
+        },
+        "ctx": {
+          "context": false
+        },
+        "num": {
+          "number": false
+        },
+        "tmp": {
+          "temp": true,
+          "temporary": false
+        },
+        "temp": {
+          "temporary": false
+        },
+        "func": {
+          "function": false
+        },
+        "params": {
+          "parameters": false
+        },
+        "prop": {
+          "property": false
+        },
+        "props": {
+          "properties": false
+        },
+        "ref": {
+          "reference": false
+        },
+        "arr": {
+          "array": false
+        },
+        "prevState": {
+          "previousState": false
+        }
+      }
+    }],
+    "unicorn/numeric-separators-style": "off", // strange rule
+    "react/prop-types": "off",  //Bad code style
+    "import/no-unresolved": "off", // 2 errors // react-hook-form/dist/types/controller
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "unicorn/no-array-reduce": "off", // why no reduce?
+    "complexity": "off", //disabled in favor of sonarjs/cognitive-complexity
+    "unicorn/no-null": "off", // maybe fix later
+    "import/no-cycle": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.test.jsx", "*.test.ts", "*.test.tsx", "*.spec.js", "*.spec.jsx", "*.spec.ts", "*.spec.tsx"],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/init-declarations": "off",
+
+        "unicorn/no-useless-undefined": "off",
+        "unicorn/consistent-function-scoping": "off",
+        "unicorn/prefer-node-protocol": "off",
+        "unicorn/error-message": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    },
+    {
+      "files": ["*.stories.tsx"],
+      "rules": {
+        "unicorn/no-useless-undefined": "off"
+      }
+    },
+    {
+      "files": ["styles.ts", "styles.tsx"],
+      "rules": {
+        "sonarjs/no-duplicate-string": "off"
+      }
+    }
+  ]
+}

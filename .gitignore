@@ -1,0 +1,101 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/packages/*/node_modules
+env-config.js
+# testing
+/packages/*/coverage
+/packages/*/jest-results.json
+
+# production
+/storybook-static
+/packages/*/build
+/packages/*/storybook-static
+apps/*/coverage
+packages/*/coverage
+/dist
+/packages/*/dist
+/public
+/api
+/components
+/utils
+/icons
+/constants
+/images
+/packages/*/**/*.js
+/packages/*/**/*.js.map
+/packages/*/**/*.d.ts
+git_actions/*.d.ts
+!@types/*.d.ts
+# css
+/packages/*/src/index.css
+/packages/*/src/styles/*.css
+
+# misc
+.DS_Store
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+# logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# idea
+.idea
+
+# ts cache
+packages/**/*.tsbuildinfo
+
+# cypress
+/packages/*/cypress/videos
+/packages/*/cypress/screenshots
+/packages/*/cypress/videos/
+/packages/*/snapshots.js
+/packages/*/mochawesome-report
+
+# not ignore
+!/packages/containers/cors-proxy.js
+!/packages/components/config/jest/setupTests.js
+!/packages/icons/updateIndexes.js
+
+# storybook
+!/packages/*/.storybook/**.js
+
+#configs
+!/packages/*/config/**.js
+!/packages/*/config/jest/*.js
+!/packages/*/babel.config.js
+!/packages/*/jest.config.js
+!/packages/*/.eslintrc.js
+
+# template
+!/packages/template/**/*
+
+# eslint
+.eslintcache
+
+.cache
+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+tsconfig.tsbuildinfo
+
+packages/**/*.tgz
+
+!/packages/prettier-config/index.js
+
+winpty.exe.stackdump
+
+!/packages/eslint-config/index.js
+**/**/stats.html
+lefthook.yml
+.vitest-preview
